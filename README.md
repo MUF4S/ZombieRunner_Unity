@@ -1,6 +1,6 @@
 # ZombieRunner_Unity
 
-The main idea of the game is to make zombies run to human targets and destroy them. At the level will be some panels with mathematics to impove zombies and make more of them. Game is made on Unity Engine. 
+The main idea of the game is to make zombies run to human targets and destroy them. At the level will be some panels with mathematics to impove zombies and make more of them. Game is made on Unity Engine. Game will be targeted to Android devices.
 
 
 
