@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MathScript : MonoBehaviour
+{
+     bool startTimer;
+    float timeToDestroy = 1f;
+    PlayerController player;
+    [Tooltip("This slider sets mathematical operation for object : 1 - plus | 2 - minus | 3 - multiply | 4 - devide  ")]
+    [Range(1,4)]
+    [SerializeField]int math;
+    [SerializeField]int amount;
+    
+
+    private void Start() {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        
+    }
+    private void Update() {
+        
+        if(startTimer)
+        {
+            timeToDestroy -= Time.deltaTime;
+        }
+        if(timeToDestroy<=0)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+    }
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "Player")
+        {
+            startTimer = true;
+            //player.AddPlayers(5);
+            player.MultiplyPlayers(3);
+
+            switch (math)
+            {
+                case 1: 
+                    player.AddPlayers(amount);
+                    break;
+                case 2:
+                    player.RemovePlayers(amount);
+                    break;
+                case 3:
+                    player.MultiplyPlayers(amount);
+                    break;
+                case 4:
+                    player.DevidePlayers(amount);
+                    break;
+
+                default:
+                break;
+            }
+            GetComponent<BoxCollider>().enabled =false;
+        }
+    }
+}
