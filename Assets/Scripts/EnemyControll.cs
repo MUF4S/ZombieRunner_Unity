@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyControll : MonoBehaviour
 {
     Transform lookAt;
-    bool isFacingTarget;
+    [SerializeField]bool isFacingTarget;
     public Transform hitter;
     RaycastHit hit;
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class EnemyControll : MonoBehaviour
 
         }*/
         if(lookAt !=null)
-            transform.LookAt(lookAt);
+            transform.LookAt(lookAt.position);
                
     }
     private void OnTriggerEnter(Collider other) {
@@ -41,6 +41,7 @@ public class EnemyControll : MonoBehaviour
        
        if(!isFacingTarget)      
        {
+           Debug.DrawLine(hitter.position,hit.point,Color.yellow,0.2f);
             for (int i = 0; i < 8; i++)
             {
             
@@ -71,7 +72,6 @@ public class EnemyControll : MonoBehaviour
                     if(hit.transform.tag =="Player")
                     {
                         Debug.Log("Did Hit" + hit.transform.tag);
-                    
                         lookAt = hit.transform;
                         isFacingTarget = true;
                         return;
