@@ -6,7 +6,32 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_M
+    second: {fileID: 2100000, guid: 662e7eac71bb5fa46b37ae92c87ca667, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass_hair_M
+    second: {fileID: 2100000, guid: fa489c50687fc334892371cabfab9861, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FuzZombie__diffuse
+    second: {fileID: 2800000, guid: 0d557da7e643b7d4e8d5d3c3b02c5fda, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FuzZombie__normal
+    second: {fileID: 2800000, guid: a0a32a0c2f05fa64db53578b8b47d470, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: FuzZombie__specular
+    second: {fileID: 2800000, guid: df7ad76a6b204624999f01fdefb82ca0, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

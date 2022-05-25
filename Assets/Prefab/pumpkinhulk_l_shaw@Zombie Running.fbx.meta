@@ -6,7 +6,22 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PumpkinHulk_Material
+    second: {fileID: 2100000, guid: abc0cb88d2ab37e4a9c002bdf600168c, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pumpkinHulk_diffuse
+    second: {fileID: 2800000, guid: e0477cf7a5a76ab45a9527bc0e9e6581, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pumpkinHulk_normal
+    second: {fileID: 2800000, guid: 5d7f693ea85799f4cae596cf49c22330, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
