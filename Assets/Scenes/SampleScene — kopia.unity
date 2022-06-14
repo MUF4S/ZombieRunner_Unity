@@ -753,7 +753,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 8341161198671653776, guid: 75162c439eb11e94e811368b70e5047d, type: 3}
+  m_Mesh: {fileID: 8341161198671653776, guid: 4f32fa8eb88718642b61f0c270f51c61, type: 3}
   m_Bones:
   - {fileID: 1760734965}
   - {fileID: 1985822553}
@@ -6129,7 +6129,7 @@ MonoBehaviour:
     type: 3}
   manekin: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   manekinMove: {x: 0, y: 0}
-  moveSpeed: 1
+  moveSpeed: 0
 --- !u!4 &661243642
 Transform:
   m_ObjectHideFlags: 0
@@ -6713,7 +6713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &728947285
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18604,7 +18604,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

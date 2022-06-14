@@ -8,6 +8,8 @@ public class EnemyControll : MonoBehaviour
     [SerializeField]bool isFacingTarget;
     public Transform hitter;
     RaycastHit hit;
+
+    PlayerController player;
     // Update is called once per frame
     void Update()
     {
@@ -19,9 +21,12 @@ public class EnemyControll : MonoBehaviour
             Debug.Log("Did Hit");
 
         }*/
-        if(lookAt !=null)
+        if(lookAt !=null){
             transform.LookAt(lookAt.position);
-               
+            player = lookAt.GetComponentInParent<PlayerController>();
+            Debug.Log("Did it to me");
+        }
+               Debug.Log(lookAt);
     }
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player")
@@ -33,9 +38,11 @@ public class EnemyControll : MonoBehaviour
     private void OnTriggerStay(Collider other) {
         if(other.tag == "Player")
         {
-            Debug.Log("Trigger");
             MakeRay();
         }
+    }
+    private void OnTriggerExit(Collider other) {
+        player = null;
     }
     void MakeRay(){
        
@@ -90,5 +97,12 @@ public class EnemyControll : MonoBehaviour
                isFacingTarget = false;
            }
        }
+    }
+    public void Example(){
+        if(player != null)
+        {
+            player.RemovePlayers(1);
+            Debug.Log("HITT");
+        }
     }
 }
