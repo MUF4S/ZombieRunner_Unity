@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]List<GameObject>hidenManekins;
     [SerializeField]List<GameObject> biggerManekins;
     public GameObject biggerZombie;
+    public TextMeshProUGUI text;
+    Animator[] anim;
+    bool mid = false;
     
 
     public GameObject manekin;
@@ -19,14 +23,16 @@ public class PlayerController : MonoBehaviour
     int howManyToDestroy;
     int howManyToAdd;
     float startTime = 0.5f;
-    [SerializeField] float moveSpeed;
+    public float moveSpeed;
     int bigManekin;
     int allManekins;
+    
+    Vector3 zPos = new Vector3(0,0,5);
 
     // Start is called before the first frame update
     void Start()
     {
-   
+       
         for (int i = 1; i < transform.childCount; i++)
         {
             manekins.Add(transform.GetChild(i).gameObject);
@@ -39,14 +45,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        text.text = points.ToString();
         if(right)
         {
-            transform.position = new Vector3(transform.position.x,0f,5f);
+            transform.position = new Vector3(transform.position.x,0f,zPos.z);
         }
         else{
-            transform.position = new Vector3(transform.position.x,0f,-5f);
+            transform.position = new Vector3(transform.position.x,0f,-zPos.z);
         }
-        Debug.Log("COUNT:  " +biggerManekins.Count);
         Move();
         if(startTime>=0)
         {
@@ -91,7 +98,7 @@ public class PlayerController : MonoBehaviour
                 if(biggerManekins.Count==0)
                 {
 
-                    Debug.Log("Zmniejsz się kurwa");
+                    
                     
                     howManyToDestroy--;
                     
@@ -169,6 +176,10 @@ public class PlayerController : MonoBehaviour
         if(manekins.Count == allManekins){
             points = 0;
         }
+        if(mid)
+        {
+            zPos = Vector3.Lerp(transform.position, new Vector3(transform.position.x,transform.position.y,0f),2f);
+        }
         
     }
 
@@ -213,6 +224,16 @@ public class PlayerController : MonoBehaviour
         int disparity = all - points;
         howManyToAdd += disparity;
         points += disparity;
-        Debug.Log("Różnica:  " + disparity);
+    }
+
+    public void FinalAction(){
+         anim = GetComponentsInChildren<Animator>();
+        
+        moveSpeed =3f;
+       for (int i = 0; i < anim.Length; i++)
+       {
+         anim[i].speed = 0.6f;
+       }
+        mid=true;
     }
 }

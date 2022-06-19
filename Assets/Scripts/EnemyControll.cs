@@ -24,14 +24,13 @@ public class EnemyControll : MonoBehaviour
         if(lookAt !=null){
             transform.LookAt(lookAt.position);
             player = lookAt.GetComponentInParent<PlayerController>();
-            Debug.Log("Did it to me");
         }
                Debug.Log(lookAt);
     }
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player")
         {
-            Debug.Log("Trigger");
+
             MakeRay();
         }
     }
@@ -62,7 +61,7 @@ public class EnemyControll : MonoBehaviour
                     Debug.DrawLine(hitter.position,hit.point,Color.yellow,0.2f);
                     if(hit.transform.tag =="Player")
                     {
-                        Debug.Log("Did Hit" + hit.transform.tag);
+
                         lookAt = hit.transform;
                         isFacingTarget = true;
                         return;
@@ -78,7 +77,6 @@ public class EnemyControll : MonoBehaviour
                     Debug.DrawLine(hitter.position,hit.point,Color.yellow,0.2f);
                     if(hit.transform.tag =="Player")
                     {
-                        Debug.Log("Did Hit" + hit.transform.tag);
                         lookAt = hit.transform;
                         isFacingTarget = true;
                         return;
@@ -102,7 +100,7 @@ public class EnemyControll : MonoBehaviour
         if(player != null)
         {
             player.RemovePlayers(1);
-            Debug.Log("HITT");
+
         }
     }
 }
