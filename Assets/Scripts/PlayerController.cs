@@ -7,7 +7,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] bool right;
-    public int points;
+    public int points =1;
     [SerializeField] List<GameObject> manekins;
     [SerializeField]List<GameObject> showedManekins;
     [SerializeField]List<GameObject>hidenManekins;
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI text;
     Animator[] anim;
     bool mid = false;
+    GameObject objToDestroy;
     
 
     public GameObject manekin;
@@ -174,11 +175,17 @@ public class PlayerController : MonoBehaviour
             }
         
         if(manekins.Count == allManekins){
-            points = 0;
+           // points = 1;
         }
         if(mid)
         {
             zPos = Vector3.Lerp(transform.position, new Vector3(transform.position.x,transform.position.y,0f),2f);
+        }
+
+        if(points <=0){
+            Time.timeScale = 0f;
+            Destroy(objToDestroy);
+            
         }
         
     }
@@ -192,38 +199,36 @@ public class PlayerController : MonoBehaviour
     }
     
 
-    public void DevidePlayers(int howMany){
+    public void DevidePlayers(int howMany,GameObject obj){
         if(showedManekins.Count>0 || biggerManekins.Count>0)
         {
             int all = Mathf.FloorToInt(points/howMany);
             int disparity = points - all;
             howManyToDestroy += disparity;
             points -= disparity;
+            objToDestroy = obj;
         }
        
         
     }
-    public void AddPlayers(int howMany)
+    public void AddPlayers(int howMany,GameObject obj)
     {
-        
+            objToDestroy = obj;
             howManyToAdd += howMany;
             points += howMany;
     }
-    public void RemovePlayers(int howMany)
+    public void RemovePlayers(int howMany,GameObject obj)
     {
-        
+            objToDestroy = obj;
             howManyToDestroy += howMany;
             points -= howMany;
     }
-    public void MultiplyPlayers(int howMany){
-        if(points ==0)
-        {
-            points =1;
-        }
+    public void MultiplyPlayers(int howMany,GameObject obj){
         int all = points*howMany;
         int disparity = all - points;
         howManyToAdd += disparity;
         points += disparity;
+        objToDestroy = obj;
     }
 
     public void FinalAction(){

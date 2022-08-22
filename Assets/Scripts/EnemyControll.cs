@@ -25,7 +25,7 @@ public class EnemyControll : MonoBehaviour
             transform.LookAt(lookAt.position);
             player = lookAt.GetComponentInParent<PlayerController>();
         }
-               Debug.Log(lookAt);
+             
     }
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player")
@@ -99,7 +99,7 @@ public class EnemyControll : MonoBehaviour
     public void Example(){
         if(player != null)
         {
-            player.RemovePlayers(1);
+            player.RemovePlayers(1,null);
 
         }
     }

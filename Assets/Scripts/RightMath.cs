@@ -57,16 +57,16 @@ public class RightMath : MonoBehaviour
             switch (math)
             {
                 case 1: 
-                    player.AddPlayers(amount); 
+                    player.AddPlayers(amount,transform.parent.gameObject); 
                     break;
                 case 2:
-                    player.RemovePlayers(amount);
+                    player.RemovePlayers(amount,transform.parent.gameObject);
                     break;
                 case 3:
-                    player.MultiplyPlayers(amount);
+                    player.MultiplyPlayers(amount,transform.parent.gameObject);
                     break;
                 case 4:
-                    player.DevidePlayers(amount);
+                    player.DevidePlayers(amount,transform.parent.gameObject);
                     break;
 
                 default:

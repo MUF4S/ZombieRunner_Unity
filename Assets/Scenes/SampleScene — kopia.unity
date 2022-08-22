@@ -5607,7 +5607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   right: 0
-  points: 0
+  points: 1
   manekins: []
   showedManekins: []
   hidenManekins: []
@@ -5617,7 +5617,7 @@ MonoBehaviour:
   text: {fileID: 1088689232}
   manekin: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   manekinMove: {x: 0, y: 0}
-  moveSpeed: 0
+  moveSpeed: 5
 --- !u!4 &661243642
 Transform:
   m_ObjectHideFlags: 0
@@ -7771,7 +7771,7 @@ PrefabInstance:
     - target: {fileID: 1500102140592515431, guid: 50ccaf3da0106fe43a92f39813897608,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.43421364
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 1500102140592515431, guid: 50ccaf3da0106fe43a92f39813897608,
         type: 3}
@@ -8687,7 +8687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0.09229593, y: 0.7010574, z: -0.09229593, w: -0.7010574}
-  m_LocalPosition: {x: 201.96, y: 5, z: 5.000001}
+  m_LocalPosition: {x: 206.86, y: 5, z: 5.0000014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12062,7 +12062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 0
-  m_FollowOffset: {x: 0, y: 5, z: -7}
+  m_FollowOffset: {x: 0, y: 5, z: -11.9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -17054,7 +17054,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7414448, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -17071,7 +17071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938803086}
   m_LocalRotation: {x: -0.09229593, y: 0.7010574, z: -0.09229593, w: -0.7010574}
-  m_LocalPosition: {x: 201.96, y: 5, z: 5.000001}
+  m_LocalPosition: {x: 206.86, y: 5, z: 5.0000014}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
